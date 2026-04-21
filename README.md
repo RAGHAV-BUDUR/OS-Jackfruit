@@ -124,23 +124,24 @@ sudo rmmod monitor
 dmesg | grep container_monitor | tail -5
 ```
 3. Demo Screenshots
+  1) Kernel Module Load & Supervisor Startup (Container Initialization)
 <img width="1214" height="254" alt="Screenshot 2026-04-21 141046" src="https://github.com/user-attachments/assets/4067a0fb-1f23-4821-a1da-9e63fb04b7a8" />
-
+2)Container Lifecycle Management & Process Monitoring (start, run, ps, logs, stop)
 <img width="1175" height="624" alt="Screenshot 2026-04-21 141103" src="https://github.com/user-attachments/assets/f8bab982-8900-47eb-8681-243d57a0cb04" />
 
-
+3)Memory Limit Enforcement — Soft Limit Warning & Hard Limit Kill (dmesg Output)
 
 
 <img width="1203" height="381" alt="Screenshot 2026-04-21 141359" src="https://github.com/user-attachments/assets/45f8fadb-7813-4fc2-b81f-f7b13df346a0" />
-
+4)CPU Scheduling Experiment — High vs Low Priority (Nice Values Comparison)
 
 <img width="1153" height="698" alt="Screenshot 2026-04-21 141919" src="https://github.com/user-attachments/assets/ac4e853a-6a53-467e-b393-acfa524c0a67" />
-
+5)CPU vs I/O Scheduling Experiment — CPU-Bound vs I/O-Bound Behavior
 <img width="1151" height="732" alt="Screenshot 2026-04-21 142240" src="https://github.com/user-attachments/assets/ccd81d11-e3ae-4fdc-be12-11e4b4b628f8" />
-
+6)Clean Shutdown — Container Exit & Kernel Module Unload (No Residual Processes)
 
 <img width="1054" height="184" alt="Screenshot 2026-04-21 142956" src="https://github.com/user-attachments/assets/9603f630-28f2-4308-b8e2-3d5bef074363" />
-
+7)Supervisor Lifecycle Completion — All Containers Terminated & No Zombie Processes
 
 
 <img width="1195" height="768" alt="Screenshot 2026-04-21 142923" src="https://github.com/user-attachments/assets/a2017c97-3b45-4891-a7c8-05d7e96a52d1" />
