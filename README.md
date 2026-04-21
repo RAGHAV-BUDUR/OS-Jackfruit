@@ -124,19 +124,21 @@ sudo rmmod monitor
 dmesg | grep container_monitor | tail -5
 ```
 3. Demo Screenshots
-Screenshot 1 — Two containers running under one supervisor ss1
 
-Screenshot 2 — ps output showing container metadata ss2
+<img width="1214" height="254" alt="Screenshot 2026-04-21 141046" src="https://github.com/user-attachments/assets/082ba9e6-3853-4fb4-a621-7be11130fb63" />
+<img width="1175" height="624" alt="Screenshot 2026-04-21 141103" src="https://github.com/user-attachments/assets/60b57342-d1ec-4b3f-802d-4f5fea865895" />
+<img width="1203" height="381" alt="Screenshot 2026-04-21 141359" src="https://github.com/user-attachments/assets/b7b20b50-17da-4c8e-bcef-89b9af338468" />
+<img width="1153" height="698" alt="Screenshot 2026-04-21 141919" src="https://github.com/user-attachments/assets/ca2d6045-f140-4eab-bb00-6411df41427b" />
+<img width="1151" height="732" alt="Screenshot 2026-04-21 142240" src="https://github.com/user-attachments/assets/f64a7057-6569-4614-a5ab-3836e0ac453a" />
+<img width="1195" height="768" alt="Screenshot 2026-04-21 142923" src="https://github.com/user-attachments/assets/3b4f584e-e356-4b3c-857a-587b3ca37d4d" />
+<img width="1054" height="184" alt="Screenshot 2026-04-21 142956" src="https://github.com/user-attachments/assets/f8de0a14-ab57-4f2d-9b2a-c50a874d56c3" />
 
-Screenshot 3 — Logging pipeline proof ss3
 
-Screenshot 4 — CLI command and supervisor response ss4
 
-Screenshot 5 — Soft limit warning in dmesg ss5
 
-Screenshot 6 — Hard limit kill in dmesg ss6
 
-Screenshot 7 — Scheduler experiment results ss7
+
+
 
 Screenshot 8 — Clean teardown, no zombies ss8
 
