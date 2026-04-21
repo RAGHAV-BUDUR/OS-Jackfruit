@@ -124,23 +124,27 @@ sudo rmmod monitor
 dmesg | grep container_monitor | tail -5
 ```
 3. Demo Screenshots
+<img width="1214" height="254" alt="Screenshot 2026-04-21 141046" src="https://github.com/user-attachments/assets/4067a0fb-1f23-4821-a1da-9e63fb04b7a8" />
 
-<img width="1214" height="254" alt="Screenshot 2026-04-21 141046" src="https://github.com/user-attachments/assets/082ba9e6-3853-4fb4-a621-7be11130fb63" />
-<img width="1175" height="624" alt="Screenshot 2026-04-21 141103" src="https://github.com/user-attachments/assets/60b57342-d1ec-4b3f-802d-4f5fea865895" />
-<img width="1203" height="381" alt="Screenshot 2026-04-21 141359" src="https://github.com/user-attachments/assets/b7b20b50-17da-4c8e-bcef-89b9af338468" />
-<img width="1153" height="698" alt="Screenshot 2026-04-21 141919" src="https://github.com/user-attachments/assets/ca2d6045-f140-4eab-bb00-6411df41427b" />
-<img width="1151" height="732" alt="Screenshot 2026-04-21 142240" src="https://github.com/user-attachments/assets/f64a7057-6569-4614-a5ab-3836e0ac453a" />
-<img width="1195" height="768" alt="Screenshot 2026-04-21 142923" src="https://github.com/user-attachments/assets/3b4f584e-e356-4b3c-857a-587b3ca37d4d" />
-<img width="1054" height="184" alt="Screenshot 2026-04-21 142956" src="https://github.com/user-attachments/assets/f8de0a14-ab57-4f2d-9b2a-c50a874d56c3" />
+<img width="1175" height="624" alt="Screenshot 2026-04-21 141103" src="https://github.com/user-attachments/assets/f8bab982-8900-47eb-8681-243d57a0cb04" />
 
 
 
 
+<img width="1203" height="381" alt="Screenshot 2026-04-21 141359" src="https://github.com/user-attachments/assets/45f8fadb-7813-4fc2-b81f-f7b13df346a0" />
+
+
+<img width="1153" height="698" alt="Screenshot 2026-04-21 141919" src="https://github.com/user-attachments/assets/ac4e853a-6a53-467e-b393-acfa524c0a67" />
+
+<img width="1151" height="732" alt="Screenshot 2026-04-21 142240" src="https://github.com/user-attachments/assets/ccd81d11-e3ae-4fdc-be12-11e4b4b628f8" />
+
+
+<img width="1054" height="184" alt="Screenshot 2026-04-21 142956" src="https://github.com/user-attachments/assets/9603f630-28f2-4308-b8e2-3d5bef074363" />
 
 
 
+<img width="1195" height="768" alt="Screenshot 2026-04-21 142923" src="https://github.com/user-attachments/assets/a2017c97-3b45-4891-a7c8-05d7e96a52d1" />
 
-Screenshot 8 — Clean teardown, no zombies ss8
 
 4. Engineering Analysis
 4.1 Isolation Mechanisms
