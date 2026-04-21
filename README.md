@@ -1,4 +1,3 @@
-
 # OS-Jackfruit — Supervised Multi-Container Runtime
 
 ## 1. Team Information
@@ -16,7 +15,114 @@
 ```bash
 Ubuntu 22.04 or 24.04 in a VM (Secure Boot OFF, no WSL)
 sudo apt install -y build-essential linux-headers-$(uname -r)
-Download Alpine rootfs
+```
+
+### Download Alpine rootfs
+```bash
+mkdir rootfs
+wget https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86_64/alpine-minirootfs-3.20.3-x86_64.tar.gz
+tar -xzf alpine-minirootfs-3.20.3-x86_64.tar.gz -C rootfs
+```
+
+### Build everything
+```bash
+make
+```
+
+---
+
+## Load Kernel Module
+```bash
+sudo insmod monitor.ko
+sudo sysctl kernel.dmesg_restrict=0
+ls -la /dev/container_monitor
+```
+
+---
+
+## Start Supervisor (Terminal 1)
+```bash
+sudo ./engine supervisor ./rootfs
+```
+
+---
+
+## Container Operations (Terminal 2)
+
+### Start Containers
+```bash
+sudo ./engine start alpha ./rootfs /bin/sh
+sudo ./engine start beta ./rootfs /bin/sh
+```
+
+### Run Container (foreground)
+```bash
+sudo ./engine run test1 ./rootfs /bin/hostname
+```
+
+### List Containers
+```bash
+sudo ./engine ps
+```
+
+### Logging Test
+```bash
+sudo ./engine run logtest ./rootfs /bin/hostname
+cat logs/logtest.log
+```
+
+### Stop Containers
+```bash
+sudo ./engine stop alpha
+sudo ./engine stop beta
+```
+
+---
+
+## Memory Limit Test
+```bash
+sudo cp memory_hog ./rootfs/
+sudo ./engine start memtest ./rootfs /memory_hog --soft-mib 5 --hard-mib 10
+dmesg | grep container_monitor
+```
+
+---
+
+## Scheduler Experiments
+
+### Copy Binaries
+```bash
+sudo cp cpu_hog ./rootfs/
+sudo cp io_pulse ./rootfs/
+```
+
+### Experiment 1: Different Priorities
+```bash
+sudo ./engine start cpu_hi ./rootfs /cpu_hog --nice 0
+sudo ./engine start cpu_lo ./rootfs /cpu_hog --nice 19
+sleep 12
+cat logs/cpu_hi.log
+cat logs/cpu_lo.log
+```
+
+### Experiment 2: CPU vs I/O
+```bash
+sudo ./engine start cpu_w ./rootfs /cpu_hog --nice 0
+sudo ./engine start io_w ./rootfs /io_pulse --nice 0
+sleep 12
+cat logs/cpu_w.log
+cat logs/io_w.log
+```
+
+---
+
+## Clean Shutdown
+```bash
+# Stop supervisor using Ctrl+C
+
+sudo rmmod monitor
+dmesg | grep container_monitor | tail -5
+```
 3. Demo Screenshots
 Screenshot 1 — Two containers running under one supervisor ss1
 
